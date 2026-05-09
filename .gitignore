@@ -3,9 +3,19 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# csv files and model params files to not make repo too big
+# Data folder and all data file types
+data/
 *.csv
+*.gz
+*.jsonl
+*.jsonl.gz
+*.parquet
+*.feather
 model_params/
+
+# CatBoost training artifacts
+*.json
+*.tsv
 
 # C extensions
 *.so

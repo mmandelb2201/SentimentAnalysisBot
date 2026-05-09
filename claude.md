@@ -44,8 +44,10 @@ This project is a quantitative algorithmic trading engine focused on US Equities
     1.  Standard Library imports (e.g., `os`, `sys`, `datetime`).
     2.  Third-party imports (e.g., `pandas`, `numpy`, `requests`).
     3.  Local application/library specific imports.
+* **Module-Level Constants:** All file path constants, configuration values, and other module-level variables (e.g., `RAW_PRICE_DIR`, `SPY_PRICE_PATH`, `RELEVANCE_THRESHOLD`) MUST be defined immediately below the import block, before any function or class definitions. This makes the file's configuration surface immediately visible and easy to change without hunting through function bodies.
 * **PEP 8 Compliance:** Adhere to PEP 8 standards for naming conventions. Use `snake_case` for variables and functions, and `PascalCase` for classes.
 * **Type Hinting:** Use Python type hinting extensively for all function arguments and return types (e.g., `def fetch_data(ticker: str) -> pd.DataFrame:`). This prevents type-mismatch bugs in downstream execution logic.
 * **Docstrings:** Every function and class must have a concise docstring explaining its purpose, arguments, and return value.
 * **Modularity:** Avoid monolithic files. Break logic down into distinct, testable functions (e.g., separate data fetching, feature engineering, and model inference).
 * **Error Handling:** Never use bare `except:` blocks. Always catch specific exceptions (e.g., `except requests.exceptions.RequestException as e:`) and log them appropriately.
+* **Jupyter Notebook Cells:** Keeps cells focused. Don't do everythig in one cell. Keep one function per cell.
